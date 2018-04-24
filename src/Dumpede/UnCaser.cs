@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Dumpede
 {
-    public static class SpaceCaser
+    public static class UnCaser
     {
-        public static string CaseToSpace(string input)
+        public static string UnCamelPascal(string input, char separator = ' ')
         {
             char currentChar;
             char nextChar;
@@ -27,13 +27,13 @@ namespace Dumpede
                 if (char.IsLower(currentChar) && (canPeek && char.IsUpper(nextChar)))
                 {
                     hooomanReadable[insertIndex++] = currentChar;
-                    hooomanReadable[insertIndex++] = ' ';
+                    hooomanReadable[insertIndex++] = separator;
                     hooomanReadable[insertIndex++] = nextChar;
                     skip = 2;
                 }
                 else if (char.IsUpper(currentChar) && i != 0 && (canPeek && char.IsLower(nextChar)))
                 {
-                    hooomanReadable[insertIndex++] = ' ';
+                    hooomanReadable[insertIndex++] = separator;
                     hooomanReadable[insertIndex++] = currentChar;
                     hooomanReadable[insertIndex++] = nextChar;
                     skip = 2;
