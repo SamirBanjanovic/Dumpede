@@ -46,7 +46,7 @@ namespace Dumpede
                 else if ((q == 1 || q == 3 || q == 4) && (toClean = itemsToClean.Contains(c)))
                 {// skip ignore values; replace new lines with space...prevents string concatination
                     if (toClean)
-                        sw.Write(" ");
+                        sw.Write(newValue);
 
                     q = 3;
                 }
