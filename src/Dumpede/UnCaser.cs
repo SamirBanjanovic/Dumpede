@@ -28,6 +28,7 @@ namespace Dumpede
                 if (char.IsLower(currentChar) && (canPeek && char.IsUpper(nextChar)))
                 {// found a qualifying space (eg: testCase) -> we are at "t" nextChar is "C"
                  // insert separator
+                 // insert chars: "t", %separator%, "C"
                  // yields: [t|e|s|t| |C|~]
                     hooomanReadable[insertIndex++] = currentChar;
                     hooomanReadable[insertIndex++] = separator;
@@ -37,6 +38,7 @@ namespace Dumpede
                 else if (char.IsUpper(currentChar) && i != 0 && (canPeek && char.IsLower(nextChar)))
                 {// we've entered state of continous upper case letters (eg: HTTPClient) and have arrived
                  // at a position where the next char is lower. Thus, insert space before last upper case 
+                 // insert chars: %separator%, "C", "l"
                  // yields: [H|T|T|P| |C|l|~]
                     hooomanReadable[insertIndex++] = separator;
                     hooomanReadable[insertIndex++] = currentChar;
