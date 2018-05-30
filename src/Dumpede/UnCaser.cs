@@ -29,7 +29,6 @@ namespace Dumpede
                 {// found a qualifying space (eg: testCase) -> we are at "t" nextChar is "C"
                  // insert separator
                  // yields: [t|e|s|t| |C|~]
-                 //
                     hooomanReadable[insertIndex++] = currentChar;
                     hooomanReadable[insertIndex++] = separator;
                     hooomanReadable[insertIndex++] = nextChar;
